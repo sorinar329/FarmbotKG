@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.ease-crc.org/ont/FarmBotOntology"
+         xmlns="http://www.ease-crc.org/ont/FarmBotOntology#">
+
+<owl:Ontology rdf:about="http://www.ease-crc.org/ont/FarmBotOntology"/>
+
+<owl:ObjectProperty rdf:about="#has_leaf_wetness">
+  <rdfs:domain rdf:resource="#Leaf"/>
+  <rdfs:range rdf:resource="#LeafWetness"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_leaf">
+  <rdfs:domain rdf:resource="#Crop"/>
+  <rdfs:range rdf:resource="#Leaf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_chlorophyll_concentraton">
+  <rdfs:domain rdf:resource="#Leaf"/>
+  <rdfs:range rdf:resource="#LeafChlorophyllConcentration"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#has_value">
+  <rdfs:domain rdf:resource="#Factor"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_chlorophyll_concentration_threshold">
+  <rdfs:domain rdf:resource="#Crop"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_plant_stress">
+  <rdfs:domain rdf:resource="#Crop"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Action">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MovingAction">
+  <rdfs:subClassOf rdf:resource="#Action"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WateringAction">
+  <rdfs:subClassOf rdf:resource="#Action"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SeedingAction">
+  <rdfs:subClassOf rdf:resource="#Action"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Crop">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Tomato">
+  <rdfs:subClassOf rdf:resource="#Crop"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Corn">
+  <rdfs:subClassOf rdf:resource="#Crop"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Factor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EnvironmentalFactor">
+  <rdfs:subClassOf rdf:resource="#Factor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AirHumidity">
+  <rdfs:subClassOf rdf:resource="#EnvironmentalFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SoilMoisture">
+  <rdfs:subClassOf rdf:resource="#EnvironmentalFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AirTemperature">
+  <rdfs:subClassOf rdf:resource="#EnvironmentalFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SoilCompaction">
+  <rdfs:subClassOf rdf:resource="#EnvironmentalFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#soilPH">
+  <rdfs:subClassOf rdf:resource="#EnvironmentalFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#soilSalinity">
+  <rdfs:subClassOf rdf:resource="#EnvironmentalFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#soilTemperature">
+  <rdfs:subClassOf rdf:resource="#EnvironmentalFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PlantFactor">
+  <rdfs:subClassOf rdf:resource="#Factor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LeafChlorophyllConcentration">
+  <rdfs:subClassOf rdf:resource="#PlantFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LeafStomatalClosure">
+  <rdfs:subClassOf rdf:resource="#PlantFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LeafTemperature">
+  <rdfs:subClassOf rdf:resource="#PlantFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LeafWetness">
+  <rdfs:subClassOf rdf:resource="#PlantFactor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sensor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Camera">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#HyperSpectralCamera">
+  <rdfs:subClassOf rdf:resource="#Camera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RGBDCamera">
+  <rdfs:subClassOf rdf:resource="#Camera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#stereoDepth">
+  <rdfs:subClassOf rdf:resource="#Camera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ThermalCamera">
+  <rdfs:subClassOf rdf:resource="#Camera"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Leaf">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Threshold">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#tomato">
+  <rdf:type rdf:resource="#Crop"/>
+  <has_leaf rdf:resource="#leaf1"/>
+  <has_chlorophyll_concentration_threshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</has_chlorophyll_concentration_threshold>
+  <has_plant_stress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High</has_plant_stress>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#leaf1">
+  <rdf:type rdf:resource="#Leaf"/>
+  <has_chlorophyll_concentraton rdf:resource="#chlorophyll1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#chlorophyll1">
+  <rdf:type rdf:resource="#LeafChlorophyllConcentration"/>
+  <has_value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.6</has_value>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
